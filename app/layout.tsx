@@ -23,7 +23,7 @@ export default function RootLayout({
         {children}
         <MobileNavBar />
         <ScrollToTop />
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   )
