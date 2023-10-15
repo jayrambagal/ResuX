@@ -20,26 +20,18 @@ export default function ImportResume() {
       <div className="mx-auto mt-14 max-w-3xl rounded-md border border-gray-600 px-10 py-10 text-center shadow-md">
         {!hasUsedAppBefore ? (
           <>
-            {/* <h1 className="text-lg font-semibold text-gray-400">
+            <h1 className="text-lg font-semibold text-gray-400">
               Import data from an existing resume
-            </h1> */}
+            </h1>
             <ResumeDropzone
               onFileUrlChange={onFileUrlChange}
               className="mt-5"
             />
-            {!hasAddedResume && (
-              <>
-                {/* <OrDivider />
-                <SectionWithHeadingAndCreateButton
-                  heading="Don't have a resume yet?"
-                  buttonText="Create from scratch"
-                /> */}
-              </>
-            )}
+
           </>
         ) : (
           <>
-            {/* {!hasAddedResume && (
+            {!hasAddedResume && (
               <>
                 <SectionWithHeadingAndCreateButton
                   heading="You have data saved in browser from prior session"
@@ -50,11 +42,17 @@ export default function ImportResume() {
             )}
             <h1 className="font-semibold text-gray-400">
               Override data with a new resume
-            </h1> */}
+            </h1>
             <ResumeDropzone
               onFileUrlChange={onFileUrlChange}
               className="mt-5"
             />
+            <OrDivider />
+            <SectionWithHeadingAndCreateButton
+              heading="Don't have a resume yet?"
+              buttonText="Create from scratch"
+            />
+
           </>
         )}
       </div>

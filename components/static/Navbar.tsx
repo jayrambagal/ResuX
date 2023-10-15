@@ -34,7 +34,7 @@ const Navbar: NextPage = () => {
 
   return (
     <Suspense>
-      <nav className="top-0 z-10 h-[60px] sticky border-b border-gray-800 mx-auto bg-transparent backdrop-blur-sm">
+      <nav className="flex items-center top-0 z-10 h-[60px] sticky border-b border-gray-800 mx-auto bg-transparent backdrop-blur-sm">
         <div className="flex justify-between md:justify-around p-[0.2rem] w-full ">
           {/* Logo for ResumeX */}
           <div className="item-navbar" id="logo-ph">

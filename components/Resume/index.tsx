@@ -34,8 +34,15 @@ export const Resume = () => {
       <NonEnglishFontsCSSLazyLoader />
       <div className="relative flex justify-center md:justify-start">
         <FlexboxSpacer maxWidth={50} className="hidden md:block" />
-        <div className="relative w-full" >
-          <section className="h-[calc(100vh-var(--top-nav-bar-height)-var(--resume-control-bar-height))] overflow-hidden md:p-[var(--resume-padding)]">
+        <div className="relative w-full flex flex-row items-center h-[100vh]" >
+          <ResumeControlBarCSR
+            scale={scale}
+            setScale={setScale}
+            documentSize={settings.documentSize}
+            document={document}
+            fileName={resume.profile.name + " - Resume"}
+          />
+          <section className="w-full h-[calc(100vh-var(--top-nav-bar-height)-var(--resume-control-bar-height))] overflow-hidden md:p-[var(--resume-padding)]">
             <ResumeIframeCSR
               documentSize={settings.documentSize}
               scale={scale}
@@ -48,13 +55,6 @@ export const Resume = () => {
               />
             </ResumeIframeCSR>
           </section>
-          <ResumeControlBarCSR
-            scale={scale}
-            setScale={setScale}
-            documentSize={settings.documentSize}
-            document={document}
-            fileName={resume.profile.name + " - Resume"}
-          />
         </div>
         <ResumeControlBarBorder />
       </div>
