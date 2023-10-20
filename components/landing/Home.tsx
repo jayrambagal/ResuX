@@ -2,14 +2,14 @@ import { Motion } from "@/components/framer-motion";
 import Link from "next/link";
 import images from "@/DB/homepage-image.json";
 import Image from "next/image";
-import imagges from '../../DB/assets/abstract-mathematics-wireframe-digital-art-wallpaper-preview.jpg'
+import { HOMEPAGE_IMAGES } from "@/DB/assets";
 
 export default function Landing() {
     return (
-        <div className="relative sm:pb-0 select-none overflow-hidden">
-            <div className="pt-16 sm:pt-10 sm:pb-0 lg:pt-40 lg:pb-48">
+        <div className="relative sm:pb-0 select-none">
+            <div className="pt-16 sm:pt-10 sm:pb-0 lg:pt-10 lg:pb-48">
                 <div className="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
-                    <section className="sm:max-w-[19.5rem] md:max-w-[24.5rem] tab:max-w-[28rem] lg:max-w-[30rem]">
+                    <section className="sm:max-w-auto md:max-w-[24.5rem] tab:max-w-[28rem] lg:max-w-[30rem]">
                         <Motion.div
                             initial={{ opacity: 0, x: -100 }}
                             whileInView={{ opacity: 1, x: 0 }}
@@ -20,9 +20,9 @@ export default function Landing() {
                                 stiffness: 110,
                                 delay: 0,
                             }}
-                            className="text-4xl font-bold sm:text-[5vw] md:text-5xl lg:leading-[5.5rem] lg:text-[5rem] text-white"
+                            className="text-4xl font-bold sm:text-[2rem] md:text-[2rem] lg:leading-[3rem] lg:text-[2.5rem] text-white"
                         >
-                            Learn. Build. Share.
+                            Create a <span className="text-primary">resume</span> that lands you a job faster.
                         </Motion.div>
 
                         <Motion.p
@@ -37,7 +37,7 @@ export default function Landing() {
                             }}
                             className="mt-4 text-xl text-gray-400 tracking-wide "
                         >
-                            ResuX helps you optimize your resume for any job, highlighting the key experience and skills recruiters need to see.
+                            Navigate your career path with confidence, starting with a resume that speaks volumes.
                         </Motion.p>
 
                         <Motion.div
@@ -62,10 +62,10 @@ export default function Landing() {
                             </Link>
                         </Motion.div>
                     </section>
-                    <div className="hidden md:block py-8 xsm:px-0 md:px-4 absolute transform left-2 xs:left-1/4 xsm:-translate-x-1/5 xs:-translate-x-1/4 sm:left-1/2 sm:top-0 sm:translate-x-0 lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-8 ">
+                    <div className="hidden md:block py-8 xsm:px-0 md:px-4 absolute transform left-2 xs:left-1/4 xsm:-translate-x-1/5 xs:-translate-x-1/4 sm:left-1/2 sm:top-0 sm:translate-x-0 lg:top-[60%] lg:-translate-y-1/2 lg:translate-x-8 ">
                         <div className="flex justify-center flex-grow items-center space-x-6 lg:space-x-8">
                             <div className="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
-                                {images.slice(0, 2).map((image, index) => (
+                                {HOMEPAGE_IMAGES.slice(0, 2).map((image, index) => (
                                     <Motion.div
                                         initial={{ opacity: 0, y: -640 }}
                                         whileInView={{ opacity: 1, y: 0 }}
@@ -77,10 +77,11 @@ export default function Landing() {
                                             delay: Math.random(),
                                         }}
                                         key={index}
-                                        className="floating-image h-52 w-36 md:h-64 md:w-44 overflow-hidden rounded-lg"
+                                        style={{ height: index === 1 ? '169px' : 'auto', padding: '0.5rem' }}
+                                        className="floating-image w-36 md:w-[12rem] bg-white overflow-hidden rounded-lg"
                                     >
                                         <Image
-                                            src={image.url}
+                                            src={image.src}
                                             alt={image.alt}
                                             className="h-full w-full object-cover object-center"
                                             width={500}
@@ -89,8 +90,8 @@ export default function Landing() {
                                     </Motion.div>
                                 ))}
                             </div>
-                            <div className="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-5">
-                                {images.slice(2, 5).map((image, index) => (
+                            <div className="grid flex-shrink-0 grid-cols-1 gap-y-8 lg:gap-y-12">
+                                {HOMEPAGE_IMAGES.slice(2, 5).map((image, index) => (
                                     <Motion.div
                                         initial={{ opacity: 0, y: -640 }}
                                         whileInView={{ opacity: 1, y: 0 }}
@@ -102,10 +103,11 @@ export default function Landing() {
                                             delay: Math.random(),
                                         }}
                                         key={index}
-                                        className="floating-image h-52 w-36 md:h-64 md:w-44 overflow-hidden rounded-lg "
+                                        style={{ padding: '0.5rem', overflow: 'visible' }}
+                                        className="floating-image  w-36 md:w-[12rem] bg-white rounded-lg "
                                     >
                                         <Image
-                                            src={image.url}
+                                            src={image.src}
                                             alt={image.alt}
                                             className="h-full w-full object-cover object-center "
                                             width={500}
@@ -115,7 +117,7 @@ export default function Landing() {
                                 ))}
                             </div>
                             <div className="hidden xl:grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
-                                {images.slice(5).map((image, i) => (
+                                {HOMEPAGE_IMAGES.slice(5).map((image, i) => (
                                     <Motion.div
                                         initial={{ opacity: 0, y: -640 }}
                                         whileInView={{ opacity: 1, y: 0 }}
@@ -127,10 +129,11 @@ export default function Landing() {
                                             delay: Math.random(),
                                         }}
                                         key={i}
-                                        className="floating-image h-52 w-36 md:h-64 md:w-44 overflow-hidden rounded-lg"
+                                        style={{ height: i == 6 ? '136px' : 'auto', padding: '0.5rem' }}
+                                        className="floating-image w-36 md:w-[12rem] bg-white overflow-hidden rounded-lg"
                                     >
                                         <Image
-                                            src={image.url}
+                                            src={image.src}
                                             alt={image.alt}
                                             className="h-full w-full object-cover object-center"
                                             width={500}
