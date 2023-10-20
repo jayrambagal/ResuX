@@ -22,21 +22,12 @@ const navbarItemsData: NavbarItem[] = [
     text: "Build Resume",
     url: "/products",
   },
-  // {
-  //   icon: <BiSolidBookBookmark />,
-  //   text: "Docs",
-  //   url: "/docs",
-  // },
-  // {
-  //   icon: <FaGithub />,
-  //   text: "GitHub",
-  //   url: "https://github.com/priyankarpal/ProjectsHut",
-  // },
+
 ];
 
 export const MobileNavBar = () => {
   return (
-    <footer className="fixed bottom-0 w-1/11  left-0 right-0 bg-transparent backdrop-blur-md bg-black border-gray-700 border text-white py-3 md:hidden ">
+    <footer className="fixed bottom-0 w-1/11  left-0 right-0 backdrop-blur-md bg-black border-gray-700 border text-white py-3 md:hidden ">
       <div className="mx-auto text-xl flex justify-evenly items-center px-4">
         {navbarItemsData.map((link, idx) => (
           <Link href={link.url} key={idx} aria-label="mobile navbar link">
