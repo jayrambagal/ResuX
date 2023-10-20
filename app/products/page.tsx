@@ -27,7 +27,11 @@ export default function ImportResume() {
               onFileUrlChange={onFileUrlChange}
               className="mt-5"
             />
-
+            <OrDivider />
+            <SectionWithHeadingAndCreateButton
+              heading="Don't have a resume yet?"
+              buttonText="Create from scratch"
+            />
           </>
         ) : (
           <>
@@ -47,11 +51,11 @@ export default function ImportResume() {
               onFileUrlChange={onFileUrlChange}
               className="mt-5"
             />
-            <OrDivider />
+            {/* <OrDivider />
             <SectionWithHeadingAndCreateButton
               heading="Don't have a resume yet?"
               buttonText="Create from scratch"
-            />
+            /> */}
 
           </>
         )}
