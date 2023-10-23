@@ -9,8 +9,8 @@ import {
 } from "@heroicons/react/24/outline";
 import { usePDF } from "@react-pdf/renderer";
 import dynamic from "next/dynamic";
-import { GeneralSetting, changeSettings } from "@/lib/redux/settingsSlice";
-import { useAppDispatch } from "@/lib/redux/hooks";
+import { DEFAULT_FONT_COLOR, GeneralSetting, changeSettings, selectSettings } from "@/lib/redux/settingsSlice";
+import { useAppDispatch, useAppSelector } from "@/lib/redux/hooks";
 
 const ResumeControlBar = ({
   scale,
@@ -25,7 +25,9 @@ const ResumeControlBar = ({
   document: JSX.Element;
   fileName: string;
 }) => {
-  const [color, setColor] = useState<string>("#A66EFC");
+  const settings = useAppSelector(selectSettings);
+  const themeColor = settings.themeColor || DEFAULT_FONT_COLOR;
+  const [color, setColor] = useState<string>(themeColor);
   const dispatch = useAppDispatch();
   const { scaleOnResize, setScaleOnResize } = useSetDefaultScale({
     setScale,
@@ -116,7 +118,7 @@ const ResumeControlBar = ({
         {isOpenColorPicker && (
           <div
             ref={colorPickerRef}
-            className="absolute w-[270px] flex flex-col items-center overflow-hidden  gap-3 bg-white rounded-xl left-[52px] top-0 pb-3 shadow-xl "
+            className="absolute w-[270px] border border-gray-400 flex flex-col items-center overflow-hidden  gap-3 bg-white rounded-xl left-[52px] top-0 pb-3 shadow-xl "
           >
             <HexColorPicker color={color} onChange={setColor} />
             <div className="px-2 flex items-center gap-2">
