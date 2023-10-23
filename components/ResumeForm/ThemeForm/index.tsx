@@ -36,7 +36,7 @@ export const ThemeForm = () => {
             Resume Setting
           </h1>
         </div>
-        <div>
+        {/* <div>
           <InlineInput
             label="Theme Color"
             name="themeColor"
@@ -62,7 +62,7 @@ export const ThemeForm = () => {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
         <div>
           <InputGroupWrapper label="Font Family" />
           <FontFamilySelectionsCSR

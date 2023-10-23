@@ -21,15 +21,6 @@ const Navbar: NextPage = () => {
       name: "Build Resume",
       path: "/products",
     },
-    // {
-    //   name: "Help",
-    //   path: "/help",
-    // },
-    // {
-    //   name: "Blogs",
-    //   path: "/blogs",
-    //   // external: true,
-    // },
   ];
 
   return (
