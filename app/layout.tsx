@@ -1,8 +1,9 @@
-import { Footer, Navbar, ScrollToTop } from '@/components/static'
+import { Navbar, ScrollToTop } from '@/components/static'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { MobileNavBar } from '@/components/static/MobileNavbar'
+import NextTopLoader from 'nextjs-toploader';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,11 +20,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navbar />
+        <NextTopLoader color="#A66EFC" speed={700} />
+        {/* <Navbar /> */}
         {children}
-        <MobileNavBar />
+        {/* <MobileNavBar /> */}
         <ScrollToTop />
-        {/* <Footer /> */}
       </body>
     </html>
   )

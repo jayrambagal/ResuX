@@ -27,7 +27,7 @@ const navbarItemsData: NavbarItem[] = [
 
 export const MobileNavBar = () => {
   return (
-    <footer className="fixed bottom-0 w-1/11  left-0 right-0 backdrop-blur-md bg-black border-gray-700 border text-white py-3 md:hidden ">
+    <footer className="fixed bottom-0 w-1/11  left-0 right-0 backdrop-blur-md bg-[#1c1d21] border-gray-700 border text-white py-3 md:hidden ">
       <div className="mx-auto text-xl flex justify-evenly items-center px-4">
         {navbarItemsData.map((link, idx) => (
           <Link href={link.url} key={idx} aria-label="mobile navbar link">
