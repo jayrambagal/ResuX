@@ -14,6 +14,7 @@
     "@reduxjs/toolkit": "^1.9.6",
     "framer-motion": "^10.16.4",
     "next": "latest",
+    "nextjs-toploader": "^1.5.3",
     "pdfjs": "^2.5.2",
     "pdfjs-dist": "^3.11.174",
     "react": "latest",

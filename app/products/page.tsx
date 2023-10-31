@@ -3,6 +3,8 @@ import { getHasUsedAppBefore } from "lib/redux/local-storage";
 import { ResumeDropzone } from "@/components/ResumeImport/ResumeDropzone";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { Navbar } from "@/components/static";
+import { MobileNavBar } from "@/components/static/MobileNavbar";
 
 export default function ImportResume() {
   const [hasUsedAppBefore, setHasUsedAppBefore] = useState(false);
@@ -17,7 +19,9 @@ export default function ImportResume() {
 
   return (
     <main>
-      <div className="mx-auto mt-14 max-w-3xl rounded-md border border-gray-600 px-10 py-10 text-center shadow-md">
+      <Navbar />
+      <MobileNavBar />
+      <div className="mx-auto md:mt-14 max-w-3xl rounded-md md:border md:border-gray-600 px-10 py-10 pb-20 text-center shadow-md">
         {!hasUsedAppBefore ? (
           <>
             <h1 className="text-lg font-semibold text-gray-400">

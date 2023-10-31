@@ -55,7 +55,7 @@ function Footer() {
 
   return (
     <footer className="border-t border-gray-800">
-      <div className="mx-auto max-w-screen-xl pt-8 sm:pt-16 px-4 sm:px-6 lg:px-8 pb-8">
+      <div className="mx-auto max-w-screen-xl pt-8 pb-12 sm:pt-16 px-4 sm:px-6 lg:px-8 lg:pb-4 ">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-4">
           <div className="text-center lg:text-left">
             <div className="flex h-10 items-center justify-center lg:justify-start text-white rounded-lg font-extrabold text-2xl">

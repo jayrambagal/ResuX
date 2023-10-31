@@ -5,6 +5,9 @@ import Image4 from "./image4.png";
 import Image5 from "./image5.png";
 import Image6 from "./image6.png";
 import Image7 from "./image7.png";
+import ImageLogin from "./LoginLanding.png";
+
+export const LoginLandingImage = ImageLogin;
 
 export const HOMEPAGE_IMAGES = [
   {
