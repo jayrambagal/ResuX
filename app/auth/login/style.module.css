@@ -16,7 +16,10 @@
   padding: 64px 1rem;
   gap: 5rem;
 }
-
+.loginBtn {
+  text-decoration: underline;
+  color: #925fe2;
+}
 .logRegContainer {
   width: 70%;
   height: 300px;
@@ -76,6 +79,18 @@
   padding-bottom: 2px;
   border-bottom-style: solid;
   border-bottom-width: 1px;
+  border-color: rgba(255, 255, 255, 0.4);
+  width: fit-content;
+  cursor: pointer;
+}
+.accountTag {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  position: relative;
+  display: inline-block;
   border-color: rgba(255, 255, 255, 0.4);
   width: fit-content;
   cursor: pointer;
